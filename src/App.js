@@ -1,13 +1,17 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import Home from './pages/Home'
+import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
-  );
-}
+    <BrowserRouter>
+    <Switch>
+      <Route exact= {true} path='/' component={Home}></Route>     
+      {/* <Route path='/results' component={Results}></Route>   */}
+  </Switch>
+ </BrowserRouter>    
+)}
+
 
 export default App;

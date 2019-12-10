@@ -1,16 +1,17 @@
 import React from 'react'
-import Navegation from '../../components/Nav/Navegation'
+import Nav from '../../components/Nav'
+
+import './style.css'
 
 class Home extends React.Component{
     constructor(props){
         super()
     }
-render()
-
-
-
-
-
+    render(){
+        return(
+            <Nav></Nav>
+        )
+    }
 }
 
 
