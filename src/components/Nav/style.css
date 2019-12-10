@@ -19,6 +19,7 @@
   }
   
   .navbar-links {
+    font-family: Amatica SC;
     list-style: none;
     display: flex;
     align-items: center;
@@ -30,6 +31,7 @@
   }
   
   .navbar-links a {
+    font-size: 23px;
     color: #ffffff;
     text-transform: uppercase;
     padding-bottom: 0.3rem;

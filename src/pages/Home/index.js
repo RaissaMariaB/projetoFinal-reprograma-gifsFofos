@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Nav from '../../components/Nav'
+import Header from '../../components/Header'
 
 import './style.css'
 
@@ -9,7 +10,11 @@ class Home extends React.Component{
     }
     render(){
         return(
-            <Nav></Nav>
+            <Fragment>
+                <Nav></Nav>
+                <Header/>
+
+            </Fragment>
         )
     }
 }
