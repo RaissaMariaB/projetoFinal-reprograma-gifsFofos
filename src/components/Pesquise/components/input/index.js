@@ -9,7 +9,7 @@ const Input = props => {
     return(
         <Fragment>
             
-            <input className='input-box' onClick={typing} ></input>
+            <input className='input-box' onChange={typing} ></input>
             <Btn btnStyle='btn-lupa'/>            
 
         </Fragment>

@@ -2,7 +2,7 @@ import React, {Fragment} from 'react'
 import Input from './components/input'
 
 
-import './style.css'
+
 
 const Pesquise = props => {
     const {typing} = props
@@ -10,14 +10,9 @@ const Pesquise = props => {
         <Fragment>
             <Input typing={typing}></Input>
             
-        </Fragment>
-
-        
+        </Fragment>       
 
     )
 }
-
-
-
 
 export default Pesquise

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Home from './pages/Home'
-import Nav from './components/Nav'
+import RenderGif from './pages/RenderGif'
+
 
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import './App.css';
@@ -12,7 +13,7 @@ function App() {
     <Fragment>
     <Switch>
       <Route exact= {true} path='/' component={Home}></Route>     
-      {/* <Route path='/results' component={Results}></Route>   */}
+      <Route path='/gifs' component={RenderGif}></Route>  
    </Switch>
     </Fragment>
  </BrowserRouter>    

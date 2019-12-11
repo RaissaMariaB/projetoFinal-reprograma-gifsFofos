@@ -7,16 +7,29 @@ import Card2 from '../../assets/images/Group1.png'
 import Card3 from '../../assets/images/Group3.png'
 import titleSobre from '../../assets/images/Sobre.png'
 import Search from '../../components/Pesquise'
+import Btn from '../../components/Pesquise/components/Btn'
+import { getGif } from '../../api/user'
 
 
 import './style.css'
-import Btn from '../../components/Pesquise/components/Btn'
 
 
 class Home extends React.Component{
     constructor(props){
-        super()
+        super(props)
+        this.state = {
+            value: '',
+        }
     }
+
+    inputValue = e => {
+        this.setState({
+          value: e.target.value
+        })
+        console.log(this.state.value);        
+      }
+
+
     render(){
         return(
             <Fragment>
@@ -55,6 +68,7 @@ class Home extends React.Component{
                     digite aqui um tema para gif 
                     </p>
                     <Search
+                    typing= {this.inputValue}
                     />
                     </div>                  
                     <div className='container__buttom'>
