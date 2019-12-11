@@ -1,16 +1,18 @@
-import React from 'react'
-import BoxPesquisa from '../../../../assets/images/box.png'
+import React, { Fragment } from 'react'
+import Btn from '../Btn'
+
 
 import './style.css'
 
 const Input = props => {
-    const {typing,  } = props
+    const {typing} = props
     return(
-        <img src= {BoxPesquisa} className='img-input' >
-            <input className='input-box'></input>
+        <Fragment>
             
-        </img>
-        
+            <input className='input-box' onClick={typing} ></input>
+            <Btn btnStyle='btn-lupa'/>            
+
+        </Fragment>
 
     )
 }

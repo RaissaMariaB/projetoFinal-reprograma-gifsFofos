@@ -8,7 +8,9 @@ import Card3 from '../../assets/images/Group3.png'
 import titleSobre from '../../assets/images/Sobre.png'
 import Search from '../../components/Pesquise'
 
+
 import './style.css'
+import Btn from '../../components/Pesquise/components/Btn'
 
 
 class Home extends React.Component{
@@ -22,7 +24,7 @@ class Home extends React.Component{
                 <Header/>
                 <section className= 'container__sobre'>
                     <h1 className='sobre-h1'><img alt='Título da seção Sobre' className='title-sobre' src={titleSobre}></img></h1>
-                    <hr className='linha'/>
+                    <hr />
                     
                     <div className= 'container__cards'>
                     <Sobre
@@ -43,15 +45,28 @@ class Home extends React.Component{
                      />
                      </div>
                 </section>  
-                <section className='Container__pesquise'>
-                    <h1 className='title-pesquise'>
+                <section className='container__pesquise'>
+                    <h1 className='title-search'>
                         Dá uma pesquisadinha
                     </h1>
-                    <hr/>
-                    <Search/>
+                    <hr/>  
+                    <div className='container__input'>
+                    <p className='text-random2'>
+                    digite aqui um tema para gif 
+                    </p>
+                    <Search
+                    />
+                    </div>                  
+                    <div className='container__buttom'>
+                        <p className='text-random'>
+                            está na dúvida do que pesquisar? <br/> clica aqui que ajudamos
+                        </p>
+                        <Btn btnStyle='random-azul'>    
+                        random cuteness
+                       </Btn>                   
 
-
-                </section>            
+                    </div>
+                </section>       
 
             </Fragment>
         )

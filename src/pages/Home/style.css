@@ -33,6 +33,51 @@
 
 }
 
+.title-search{
+    margin-top: 45px ;
+    font-size: 49px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.container__pesquise{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.container__input{
+    display: flex;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: #F2F2F2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+
+}
+
+.text-random{
+    font-size: 30px;
+    text-align: center;
+}
+
+.container__buttom{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0px;
+
+}
+
+
+
 
 @media only screen and (min-width: 900px) {
     .container__cards{
@@ -40,7 +85,34 @@
         flex-direction: row;
         justify-content: space-around;
         width: 100%;
+        margin-bottom: 43px;
+    }
+
+    
+}
+
+@media only screen and (min-width: 768px){
+    
+    .container__input{
+        background-image: url('../../assets/images/Capturar.PNG');
+        width:100% ;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;               
+
+            background-color: #FFFFFF;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+                
+    }
+    .text-random2{
+        font-size: 30px;
+        text-align: center;
+        margin-right: 50px;
     }
 
 
+
 }
+

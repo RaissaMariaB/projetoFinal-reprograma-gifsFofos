@@ -3,10 +3,10 @@ import React from 'react'
 import './style.css'
 
 const Btn = props =>{
-    const {btnClick, btnStyle, chlidren } = props
+    const {btnClick, btnStyle,} = props
     return(
         <button className={btnStyle} onClick={btnClick}>
-            {chlidren}
+            
         </button>
     )
 }
