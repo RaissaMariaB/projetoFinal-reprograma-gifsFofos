@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {Fragment} from 'react'
+import Nav from '../../components/Nav'
 
 import './style.css'
 
@@ -10,9 +11,14 @@ class RenderGif extends React.Component{
 
     render(){
         return(
-            <div>
-                oláaa
-            </div>
+            <Fragment>
+                <Nav/>
+                <div >
+                    oláaa
+                </div>
+
+
+            </Fragment>
 
         )
     }

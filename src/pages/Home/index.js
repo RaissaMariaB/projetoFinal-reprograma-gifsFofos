@@ -8,7 +8,7 @@ import Card3 from '../../assets/images/Group3.png'
 import titleSobre from '../../assets/images/Sobre.png'
 import Search from '../../components/Pesquise'
 import Btn from '../../components/Pesquise/components/Btn'
-import { getGif } from '../../api/user'
+import { getGif, getGifRandom } from '../../api/user'
 
 
 import './style.css'
@@ -19,7 +19,8 @@ class Home extends React.Component {
         super(props)
         this.state = {
             value: '',
-            gif:
+            gifs: {}, 
+            error: ''
            
         }
     }
@@ -38,29 +39,59 @@ class Home extends React.Component {
         if (this.state.value !== "") {
           getGif(this.state.value)
             .then(response => {
-                console.log(response);
+                console.log(response.data.data[0].images.downsized_medium.url);
                 
               this.setState({
-                user: response.data
+                gifs:response.data.data[0].images.downsized_medium.url
               });
               this.props.history.push({
                 pathname: "/gifs",
                 state: {
-                  user: this.state.user
+                  gifs: this.state.gifs
                 }
               });
             })
             .catch(error => {
               this.props.history.push({
-                pathname: "/results",
+                pathname: "/gifs",
                 state: {
-                  error: "User not found :( "
+                  error: "Ainda não temos gifs desse tema :( "
                   //   error: error.response.data.message
                 }
               });
             });
         }
       };  
+
+      searchRandom = (e) =>{
+        console.log(e,'clickRandon')
+        getGifRandom()
+        .then(response => {
+            console.log(response.data.data);
+            
+          this.setState({
+            gifs:response.data
+          });
+          this.props.history.push({
+            pathname: "/gifs",
+            state: {
+              gifs: this.state.gifs
+            }
+          });
+        })
+        .catch(error => {
+          this.props.history.push({
+            pathname: "/gifs",
+            state: {
+              error: "Ainda não temos gifs desse tema :( "
+              //   error: error.response.data.message
+            }
+          });
+        });
+      }
+
+
+
     render() {
                     return(
             <Fragment>
@@ -68,7 +99,7 @@ class Home extends React.Component {
                 <Header />
                 <section className='container__sobre'>
                     <h1 className='sobre-h1'><img alt='Título da seção Sobre' className='title-sobre' src={titleSobre}></img></h1>
-                    <hr />
+                    <hr/>
 
                     <div className='container__cards'>
                         <Sobre
@@ -107,7 +138,7 @@ class Home extends React.Component {
                         <p className='text-random'>
                             está na dúvida do que pesquisar? <br/> clica aqui que ajudamos
                         </p>
-                        <Btn btnStyle='random-azul' >
+                        <Btn btnStyle='random-azul' btnClick={this.searchRandom} >
                             random cuteness
                        </Btn>
 
