@@ -11,7 +11,10 @@
     top: 0; 
     width: 100%; 
     z-index: 99;
+    
   }
+
+  
   
   .navbar-logo {
     display: block;
@@ -36,6 +39,7 @@
     text-transform: uppercase;
     padding-bottom: 0.3rem;
   }
+  
   
   .navbar-links__ativo {
     border-bottom: 2px solid #ffffff;

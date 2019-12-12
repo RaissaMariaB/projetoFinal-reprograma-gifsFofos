@@ -5,7 +5,8 @@ import Logo from '../../assets/images/logo-branco.png'
 
 import './style.css'
 
-function Nav () {
+const Nav = (props) => {
+  
   return (
     <nav className='navbar'>
       <div>

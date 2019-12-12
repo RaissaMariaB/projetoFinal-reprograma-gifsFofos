@@ -6,8 +6,8 @@
 }
 
 .random-rosa{
-    width:360px ;
-    height: 80px;
+    width:220px ;
+    height: 45px;
     background-color: #FF6584;
 }
 
@@ -18,7 +18,8 @@
 }
 
 .btn-compartilhe{
-    width:160px ;
-    height: 47px;
+    width: 100px;
+    height: 35px;
     background-color: #FF6584;
+    border-radius: 10px;
 }

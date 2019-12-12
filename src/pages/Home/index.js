@@ -15,69 +15,44 @@ import './style.css'
 
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            value: '',
-            gifs: {}, 
-            error: ''
-           
-        }
+  constructor(props) {
+    super(props)
+    this.state = {
+      value: '',
+      gifs: {},
+      gifRandom:'',
+      error: ''
+
     }
+  }
 
-    inputValue = e => {
-        this.setState({
-            value: e.target.value
+  inputValue = e => {
+    this.setState({
+      value: e.target.value
 
-        })
-        console.log( this.state.value, 'console do input');
-    }
+    })
+    console.log(this.state.value, 'console do input');
+  }
 
-    searchGif = (e) => {
-        console.log(e,'click');
-        
-        if (this.state.value !== "") {
-          getGif(this.state.value)
-            .then(response => {
-                console.log(response.data.data[0].images.downsized_medium.url);
-                
-              this.setState({
-                gifs:response.data.data[0].images.downsized_medium.url
-              });
-              this.props.history.push({
-                pathname: "/gifs",
-                state: {
-                  gifs: this.state.gifs
-                }
-              });
-            })
-            .catch(error => {
-              this.props.history.push({
-                pathname: "/gifs",
-                state: {
-                  error: "Ainda não temos gifs desse tema :( "
-                  //   error: error.response.data.message
-                }
-              });
-            });
-        }
-      };  
+  searchGif = (e) => {
+    console.log(e, 'click');
 
-      searchRandom = (e) =>{
-        console.log(e,'clickRandon')
-        getGifRandom()
+    if (this.state.value !== "") {
+      getGif(this.state.value)
         .then(response => {
-            console.log(response.data.data);
-            
+          console.log(response.data);
+
           this.setState({
-            gifs:response.data
+            gifs: response.data.data[0].images.downsized_medium.url
           });
           this.props.history.push({
             pathname: "/gifs",
             state: {
-              gifs: this.state.gifs
+              gifs: this.state.gifs,
+              value: this.state.value
             }
           });
+
         })
         .catch(error => {
           this.props.history.push({
@@ -88,68 +63,93 @@ class Home extends React.Component {
             }
           });
         });
-      }
-
-
-
-    render() {
-                    return(
-            <Fragment>
-                <Nav></Nav>
-                <Header />
-                <section className='container__sobre'>
-                    <h1 className='sobre-h1'><img alt='Título da seção Sobre' className='title-sobre' src={titleSobre}></img></h1>
-                    <hr/>
-
-                    <div className='container__cards'>
-                        <Sobre
-                            imgSrc={Card1}
-                            children='as vezes só precisamos de um gif de gatinho para melhorarmos nosso dia.'
-                            altImg='foto de bonqeuinho fictício fofo segurando um coração'
-                        />
-                        <Sobre
-                            imgSrc={Card2}
-                            children='Pensando nisso, esse é um local mágico, onde as suas bads não tem vez, e apenas a fofurice é bem vinda!'
-                            altImg='foto de uma menina em desenho fazendo um coração com as mãos'
-                        />
-                        <Sobre
-                            className='ajuste-envelope'
-                            imgSrc={Card3}
-                            children='como no fim do dia tudo se resume a quem você quer alegrar com esse gif, te damos essa opção.'
-                            altImg='foto de um envelope com um coração cima'
-                        />
-                    </div>
-                </section>
-                <section className='container__pesquise'>
-                    <h1 className='title-search'>
-                        Dá uma pesquisadinha
-                    </h1>
-                    <hr />
-                    <div className='container__input'>
-                        <p className='text-random2'>
-                            digite aqui um tema para gif
-                    </p>
-                        <Search
-                            typing={this.inputValue}
-                            btnClick={this.searchGif}
-                        />
-                    </div>
-                    <div className='container__buttom'>
-                        <p className='text-random'>
-                            está na dúvida do que pesquisar? <br/> clica aqui que ajudamos
-                        </p>
-                        <Btn btnStyle='random-azul' btnClick={this.searchRandom} >
-                            random cuteness
-                       </Btn>
-
-                    </div>
-                </section>       
-
-            </Fragment >
-        )
-        }
     }
+  };
+
+  searchRandom = (e) => {
+    console.log(e, 'clickRandon')
+    getGifRandom()
+      .then(response => {
+        console.log(response.data.data);
+
+        this.setState({
+          gifs: response.data
+        });
+        this.props.history.push({
+          pathname: "/gifs",
+          state: {
+            gifs: this.state.gifs,
+
+          }
+        });
+      })
+      .catch(error => {
+        this.props.history.push({
+          pathname: "/gifs",
+          state: {
+            error: "Ainda não temos gifs desse tema :( "
+          }
+        });
+      });
+  }
 
 
 
-    export default Home
+  render() {
+    return (
+      <Fragment>
+        <Nav styleNav='navbarHome'></Nav>
+        <Header />
+        <section className='container__sobre'>
+          <h1 className='sobre-h1'><img alt='Título da seção Sobre' className='title-sobre' src={titleSobre}></img></h1>
+          <hr />
+
+          <div className='container__cards'>
+            <Sobre
+              imgSrc={Card1}
+              children='as vezes só precisamos de um gif de gatinho para melhorarmos nosso dia.'
+              altImg='foto de bonqeuinho fictício fofo segurando um coração'
+            />
+            <Sobre
+              imgSrc={Card2}
+              children='Pensando nisso, esse é um local mágico, onde as suas bads não tem vez, e apenas a fofurice é bem vinda!'
+              altImg='foto de uma menina em desenho fazendo um coração com as mãos'
+            />
+            <Sobre
+              className='ajuste-envelope'
+              imgSrc={Card3}
+              children='como no fim do dia tudo se resume a quem você quer alegrar com esse gif, te damos essa opção.'
+              altImg='foto de um envelope com um coração cima'
+            />
+          </div>
+        </section>
+        <section className='container__pesquise'>
+          <h1 className='title-search'>
+            Dá uma pesquisadinha
+                    </h1>
+          <hr />
+          <div className='container__input'>
+            <p className='text-random2'>
+              digite aqui um tema para gif
+                    </p>
+            <Search
+              typing={this.inputValue}
+              btnClick={this.searchGif}
+            />
+          </div>
+          <div className='container__buttom'>
+            <p className='text-random'>
+              está na dúvida do que pesquisar? <br /> clica aqui que ajudamos
+            </p>
+            <Btn btnStyle='random-azul' btnClick={this.searchRandom}/>
+          </div>
+        </section>
+
+      </Fragment >
+    )
+  }
+}
+
+
+
+export default Home
