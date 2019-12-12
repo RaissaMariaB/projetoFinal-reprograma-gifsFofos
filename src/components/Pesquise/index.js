@@ -5,10 +5,10 @@ import Input from './components/input'
 
 
 const Pesquise = props => {
-    const {typing} = props
+    const {typing, btnClick} = props
     return(
         <Fragment>
-            <Input typing={typing}></Input>
+            <Input typing={typing} btnClick= {btnClick}></Input>
             
         </Fragment>       
 

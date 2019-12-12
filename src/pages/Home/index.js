@@ -19,8 +19,8 @@ class Home extends React.Component {
         super(props)
         this.state = {
             value: '',
-            
-
+            gif:
+           
         }
     }
 
@@ -29,10 +29,12 @@ class Home extends React.Component {
             value: e.target.value
 
         })
-        console.log(this.state.value);
+        console.log( this.state.value, 'console do input');
     }
 
-    searchGif   = () => {
+    searchGif = (e) => {
+        console.log(e,'click');
+        
         if (this.state.value !== "") {
           getGif(this.state.value)
             .then(response => {
@@ -98,13 +100,14 @@ class Home extends React.Component {
                     </p>
                         <Search
                             typing={this.inputValue}
+                            btnClick={this.searchGif}
                         />
                     </div>
                     <div className='container__buttom'>
                         <p className='text-random'>
-                            está na dúvida do que pesquisar? <br /> clica aqui que ajudamos
+                            está na dúvida do que pesquisar? <br/> clica aqui que ajudamos
                         </p>
-                        <Btn btnStyle='random-azul' btnClick={this.searchGif}>
+                        <Btn btnStyle='random-azul' >
                             random cuteness
                        </Btn>
 

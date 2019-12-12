@@ -1,10 +1,8 @@
 import config from './config'
 
 function getGif(nameGif){
-    const url = `/search?api_key=dc6zaTOxFjmzC&q=${nameGif}&limit=1`
+    const url = `/search?api_key=Mo8nj8MHCKtEjwRMaaZw4h3AM6G6iy1E&q=${nameGif}&limit=1`
     return config.get(url)
-   
-    
 }
 
 
