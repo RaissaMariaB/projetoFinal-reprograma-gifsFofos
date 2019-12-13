@@ -29,55 +29,7 @@ class Home extends React.Component {
     });
   };
 
-  // searchGif = e => {
-  //   if (this.state.value !== "") {
-  //     getGif(this.state.value)
-  //       .then(response => {
-  //         this.setState({
-  //           gifs: response.data.data[0].images.downsized_medium.url
-  //         });
-  //         this.props.history.push({
-  //           pathname: "/gifs",
-  //           state: {
-  //             gifs: this.state.gifs,
-  //             value: this.state.value
-  //           }
-  //         });
-  //       })
-  //       .catch(error => {
-  //         this.props.history.push({
-  //           pathname: "/gifs",
-  //           state: {
-  //             error: "Ainda não temos gifs desse tema :( "
-  //           }
-  //         });
-  //       });
-  //   }
-  // };
-
-  // searchRandom = e => {
-  //   console.log(e, "clickRandon");
-  //   getGifRandom()
-  //     .then(response => {
-  //       this.setState({
-  //         gifs: response.data,
-  //       });
-  //       this.props.history.push({
-  //         pathname: "/gifs",
-  //         state: {
-  //           gifs: this.state.gifs,
-  //       	}
-  //     	});
-  //     })
-  //     .catch(error => {
-  //       this.props.history.push({
-  //         pathname: "/gifs",
-  //         state: {
-  //           error: "Ainda não temos gifs desse tema :( "
-  //         }
-  //       });
-  //     });
-  // };
+  
 
   changePage = e => {
     console.log(e.target.className)
