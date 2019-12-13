@@ -29,7 +29,6 @@ class Home extends React.Component {
     });
   };
 
-  
 
   changePage = e => {
     console.log(e.target.className)

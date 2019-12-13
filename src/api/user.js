@@ -2,7 +2,7 @@ import config from './config'
 
 
 function getGif(nameGif){
-    const url = `/search?api_key=Mo8nj8MHCKtEjwRMaaZw4h3AM6G6iy1E&q=cute_${nameGif}&limit=1`
+    const url = `/search?api_key=Mo8nj8MHCKtEjwRMaaZw4h3AM6G6iy1E&q=cute_${nameGif}`
     return config.get(url)
 }
 
