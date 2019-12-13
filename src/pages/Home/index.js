@@ -71,7 +71,7 @@ class Home extends React.Component {
             <Sobre
               className="ajuste-envelope"
               imgSrc={Card3}
-              children='como no fim do dia tudo se resume a quem você quer alegrar com esses gifs indica nosso site pra essa pessoa <3'
+              children='como no fim do dia tudo se resume a quem você quer alegrar com esses gifs, indica nosso site <3'
               // "como no fim do dia tudo se resume a quem você quer alegrar com esse gif, te damos essa opção."
               altImg="foto de um envelope com um coração cima"
             />
