@@ -60,7 +60,7 @@ class RenderGif extends React.Component {
 
   render() {
     console.log(this.state.value, "valuestate");
-		// const {gif_src} = this.props.history.location.state.gifs
+
 		const funcaoBtn = this.state.value === '' ? this.searchRandom : this.searchGif
     return (
       <Fragment>
@@ -69,12 +69,17 @@ class RenderGif extends React.Component {
         <div className="container_gifs">
           <Card src_gif={this.state.gifs}></Card>
           <div className="container_btn">
-            {/* <Btn className="random-rosa" btnClick={getGif(this.state.value)}>
-              random
-            </Btn> */}
-            <Btn className="random-azul" btnClick={funcaoBtn}>Próximo</Btn>
+            
+            <Btn btnStyle="random-azul" btnClick={funcaoBtn}>Próximo</Btn>
           </div>
+          
         </div>
+        <footer className='footer_gif'>
+              <p>
+                  Feito com amor por <a className='link_footer' href='https://www.linkedin.com/in/raissa-barata-6bb58b169/'>Raissa Barata</a>, na <a className='link_footer' href='https://www.reprograma.com.br/'>reprograma</a> 
+              </p>
+
+          </footer>
       </Fragment>
     );
   }

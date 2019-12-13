@@ -8,7 +8,7 @@ const Card = props =>{
     return(
         <Fragment>
             <div className='container__gif'>
-                <img src={src_gif} alt='Gif exposto na tela'/>
+                <img src={src_gif} alt='Gif exposto na tela' className='img_style'/>
             </div>
         </Fragment>
     )

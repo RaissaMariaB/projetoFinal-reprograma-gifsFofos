@@ -57,7 +57,7 @@ class Home extends React.Component {
           </h1>
           <hr />
 
-          <div className="container__cards">
+          <div className="container__cards" >
             <Sobre
               imgSrc={Card1}
               children="as vezes só precisamos de um gif de gatinho para melhorarmos nosso dia."
@@ -71,12 +71,13 @@ class Home extends React.Component {
             <Sobre
               className="ajuste-envelope"
               imgSrc={Card3}
-              children="como no fim do dia tudo se resume a quem você quer alegrar com esse gif, te damos essa opção."
+              children='como no fim do dia tudo se resume a quem você quer alegrar com esses gifs indica nosso site pra essa pessoa <3'
+              // "como no fim do dia tudo se resume a quem você quer alegrar com esse gif, te damos essa opção."
               altImg="foto de um envelope com um coração cima"
             />
           </div>
         </section>
-        <section className="container__pesquise">
+        <section className="container__pesquise" >
           <h1 className="title-search">Dá uma pesquisadinha</h1>
           <hr />
           <div className="container__input">
@@ -87,9 +88,17 @@ class Home extends React.Component {
             <p className="text-random">
               está na dúvida do que pesquisar? <br /> clica aqui que ajudamos
             </p>
-            <Btn btnStyle="random-azul" btnClick={this.changePage} />
+            <Btn btnStyle="random-azul" btnClick={this.changePage} >
+              Random
+              </Btn>
           </div>
         </section>
+        <footer className='footer_gif'>
+              <p>
+                  Feito com amor por <a className='link_footer' href='https://www.linkedin.com/in/raissa-barata-6bb58b169/'>Raissa Barata</a>, na <a className='link_footer' href='https://www.reprograma.com.br/'>reprograma</a>
+              </p>
+
+          </footer>
       </Fragment>
     );
   }

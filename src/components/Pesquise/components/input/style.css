@@ -3,6 +3,10 @@
     margin-bottom: 50px;
 }
 
+.size_lupa{
+    width: 40px;
+
+}
 @media only screen and (min-width: 768px){
     .input-box{
         width: 300px;
