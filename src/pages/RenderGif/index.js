@@ -11,7 +11,7 @@ class RenderGif extends React.Component {
     super(props);
     this.state = {
       gif: {},
-      value: "", 
+      value: this.props.history.location.state.value, 
       number: 0
     };
   }
@@ -19,7 +19,6 @@ class RenderGif extends React.Component {
   searchGif = e => {
 		getGif(this.state.value)
 			.then(response => {
-        console.log("2",response.data.data)
         this.setState({number: this.state.number + 1})
 				this.setState({
           gifs: response.data.data[this.state.number].images.downsized_medium.url,
@@ -33,11 +32,9 @@ class RenderGif extends React.Component {
   };
 
   searchRandom = e => {
-    console.log(e, "clickRandon");
     getGifRandom()
       .then(response => {
-				console.log(response.data);
-				
+						
         this.setState({
           gifs: response.data.data.images.downsized_medium.url
         });
@@ -49,26 +46,21 @@ class RenderGif extends React.Component {
   };
 
   componentDidMount() {
-		console.log(this.props.history.location.state.value, "valueprops");
 		if (this.props.history.location.state.value !== '') {
 			this.searchGif()
-			this.setState({ value: this.props.history.location.state.value })
 		} else {
 			this.searchRandom()
 		}
   }
 
   render() {
-    console.log(this.state.value, "valuestate");
-
-		const funcaoBtn = this.state.value === '' ? this.searchRandom : this.searchGif
+  		const funcaoBtn = this.state.value === '' ? this.searchRandom : this.searchGif
     return (
       <Fragment>
         <Nav />
-        {console.log(this.state.gif)}
         <div className="container_gifs">
           <Card src_gif={this.state.gifs}></Card>
-          <div className="container_btn">
+        <div className="container_btn">
             
             <Btn btnStyle="random-azul" btnClick={funcaoBtn}>Próximo</Btn>
           </div>

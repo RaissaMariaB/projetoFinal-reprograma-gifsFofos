@@ -29,10 +29,16 @@ class Home extends React.Component {
     });
   };
 
-
+  changePageRandom = e => {
+    this.props.history.push({
+      pathname: "/gifs",
+      state: {
+        value: ""
+      }
+    })
+  }
   changePage = e => {
-    console.log(e.target.className)
-    if ((e.target.className === "btn-lupa" && this.state.value !== "") || e.target.className === "random-azul") {
+    if ( this.state.value !== "") {
       this.props.history.push({
         pathname: "/gifs",
         state: {
@@ -88,7 +94,7 @@ class Home extends React.Component {
             <p className="text-random">
               está na dúvida do que pesquisar? <br /> clica aqui que ajudamos
             </p>
-            <Btn btnStyle="random-azul" btnClick={this.changePage} >
+            <Btn btnStyle="random-azul" btnClick={this.changePageRandom} >
               Random
               </Btn>
           </div>
