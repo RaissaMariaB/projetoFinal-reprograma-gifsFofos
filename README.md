@@ -1,18 +1,18 @@
-##Acesso ao netlify
+## Acesso ao netlify
 https://gifsfofos.netlify.com/
 
-##Projeto final {reprograma}
+## Projeto final {reprograma}
 O objetivo era criar um projeto com tema livre e tecnologias aprendidas durante o bootcamp de front-end.
 Foi desenvolvido um site com layout resposivo, que pesquisa Gifs na api do Giphy, tanto com a função de random quanto a de pesquisar por um tema específico.
 
 
-##Construido com
+## Construido com
 React.js - Create React App. axios react-router-dom
 
-##CSS
+## CSS
 Fonts: Google Fonts - 'Amatic SC', cursive
 
-##Giphy API endpoints:
+## Giphy API endpoints:
 Giphy Random : 'https://api.giphy.com/v1/gifs/random' Giphy Search: https://api.giphy.com/v1/gifs/search?
 
 
