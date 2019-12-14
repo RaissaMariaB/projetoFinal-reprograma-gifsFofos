@@ -15,7 +15,7 @@ Fonts: Google Fonts - 'Amatic SC', cursive
 ## Giphy API endpoints:
 Giphy Random : 'https://api.giphy.com/v1/gifs/random' Giphy Search: https://api.giphy.com/v1/gifs/search?
 
-
+## 
 
 This project was bootstrapped with Create React App.
 
